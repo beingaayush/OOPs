@@ -1,0 +1,39 @@
+Destructor:- (opposite of constructor)
+Destructor = special function that runs automatically when an object is destroyed.
+
+Its job:
+👉 free memory / Deallocate
+👉 clean resources
+
+Properties:-
+• same name as class
+• ~ before name
+• no return type
+• no parameters
+
+One-line rule - 
+❗ new → delete
+❗ constructor → destructor
+
+One-line rule (non-negotiable)
+❗ If your class uses new
+❗ You MUST write a destructor
+
+......................................
+
+Why we use a destructor ?
+Because memory/resources you allocate do NOT free themselves.
+If you don’t free them → memory leak.
+
+In the code, THIS is the reason
+marks = new int(marks);
+new takes memory from heap.
+Heap memory:
+❌ does NOT auto-delete
+❌ survives after object ends
+So you must release it.
+
+Without destructor:
+variable's memory is still alive
+program lost its address
+leak forever

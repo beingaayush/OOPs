@@ -1,0 +1,91 @@
+Serial Order =
+1. inheritance.cpp
+2. modeOfInheritance.cpp
+
+...................................................................................
+
+Inheritance:- The properties and member functions of parent / base class are passed
+on to the child / derived class.
+
+One-line rule:-
+Inheritance = reuse existing code instead of rewriting it.
+
+Important note:-
+> public inheritance → most common
+> Child cannot access parent’s private members directly
+> if we are calling class B constructor, then firstly compiler will call Class A constructor if B has inherited A.
+inshort - whenever constructor called, pehle parent class ka constructor call hoga then child class.
+> Destructor case is opposite - pehle child class ki memory deallocate hoti hai then parent class.
+
+......................................................................................................................
+
+MODE OF INHERITANCE:-
+Parent class ke members 3 type ke hote hain:
+public
+protected
+private
+
+Child kab aur kaise use karega, ye mode of inheritance decide karta hai.
+
+****************************
+Sabse pehle: private (easy)
+👉 Parent ka private member
+Child kabhi bhi directly access nahi kar sakta
+KISI bhi mode me (public / protected / private)
+Isko dimag me lock karo.
+Private = parent ke andar hi band.
+****************************
+
+Now Example :-
+class Parent {
+public:
+    int a;
+protected:
+    int b;
+private:
+    int c;
+};
+
+*******************************************
+
+Case 1: public inheritance (MOST IMPORTANT)
+class Child : public Parent {};
+Matlab:
+“Jo parent me public tha, wo child me bhi public rahe.”
+Result:
+a → public
+b → protected
+c → ❌ not accessible
+Matlab:
+Object se a access ho sakta hai
+b sirf class ke andar
+c kabhi nahi
+
+*****************************************
+
+Case 2: protected inheritance
+class Child : protected Parent {};
+Matlab:
+“Parent ka public bhi child ke andar chupana hai.”
+Result:
+a → protected
+b → protected
+c → ❌ not accessible
+Matlab:
+Object se kuch bhi access nahi
+Sirf class ke andar use
+
+*****************************************
+
+Case 3: private inheritance
+class Child : private Parent {};
+Matlab:
+“Parent ke sab members ko apna private bana lo.”
+Result:
+a → private
+b → private
+c → ❌ not accessible
+
+....................................................................................................................
+
+TYPES OF INHERITANCE :-
