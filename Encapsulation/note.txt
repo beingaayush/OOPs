@@ -1,5 +1,6 @@
 => ENCAPSULATION:- 
-   wrapping up of data & member functions in a single unit called class.
+   wrapping up of data & member functions in a single unit called class. 
+   And restricting direct access to the data by using access specifiers such as private, protected, and public.
 
 => One-line definition (remember this):-
    Encapsulation = data hiding + controlled access in a class
